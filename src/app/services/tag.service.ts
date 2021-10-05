@@ -13,7 +13,6 @@ export class TagService {
     private dataService: DataService
   ) {
     this.tagData = this.dataService.getDataFromStorage().tag;
-    console.log(this.tagData);
   }
 
   public createTag(Tag: Tag): void {

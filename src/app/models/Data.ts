@@ -1,7 +1,9 @@
+import { Challenge } from "./Challenge";
 import { Employee } from "./Employee";
 import { Tag } from "./Tag";
 
 export interface Data{
-  employee: Employee[]
-  tag: Tag[]
+  employee: Employee[];
+  tag: Tag[];
+  challenge: Challenge[];
 }

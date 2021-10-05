@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { TagComponent } from './components/tag/tag.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChallengeComponent } from './components/challenge/challenge.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     TagComponent,
-    LoginComponent
+    LoginComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,

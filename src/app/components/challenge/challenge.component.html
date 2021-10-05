@@ -1,0 +1,12 @@
+Challenge List
+<form #createChallengeForm="ngForm" (ngSubmit)="createChallengeForm.valid && createChallenge()">
+  <input type="text" name="challengeTitle" id="challengeTitle" [(ngModel)]="challenge.title" placeholder="challengeTitle" required />
+  <input type="submit" />
+</form>
+<ul>
+  <li *ngFor="let challenge of challengeList;let i=index;">
+    {{challenge.title}}
+    <button type="button" (click)="removeChallenge(i)">Remove</button>
+    <button type="button" (click)="editChallenge(i)">Edit</button>
+  </li>
+</ul>
