@@ -17,6 +17,9 @@ export class DataService {
 
   public getDataFromStorage(): Data {
     const dataFromStorage = localStorage.getItem('HackIdeasData');
+    if(dataFromStorage === null){
+      this.setDataFromStorage();
+    }
     this.data = JSON.parse(dataFromStorage || '{}');
     return this.data;
   }
