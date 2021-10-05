@@ -8,10 +8,11 @@ import { LoginCheckGuard } from './login-check.guard';
 import { LogoutCheckGuard } from './logout-check.guard';
 
 const routes: Routes = [
-  {path:'employee', component: EmployeeComponent, canActivate: [LoginCheckGuard]},
-  {path:'tag', component: TagComponent, canActivate: [LoginCheckGuard]},
-  {path:'login', component: LoginComponent, canActivate: [LogoutCheckGuard]},
-  {path:'challenge', component: ChallengeComponent, canActivate: [LoginCheckGuard]}
+  { path: '', redirectTo: '/challenge', pathMatch: 'full' },
+  { path: 'employee', component: EmployeeComponent, canActivate: [LoginCheckGuard] },
+  { path: 'tag', component: TagComponent, canActivate: [LoginCheckGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [LogoutCheckGuard] },
+  { path: 'challenge', component: ChallengeComponent, canActivate: [LoginCheckGuard] }
 ];
 
 @NgModule({

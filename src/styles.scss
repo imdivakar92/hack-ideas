@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/roboto.eot'); /* IE9 Compat Modes */
+  src: url('/assets/fonts/roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/assets/fonts/roboto.woff') format('woff'), /* Modern Browsers */
+  url('/assets/fonts/roboto.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('/assets/fonts/roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(90deg, #C7C5F4, #776BCC);
+}
+
+.screen {
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);
+	position: relative;
+	height: 600px;
+	width: 25vw;
+	box-shadow: 0px 0px 24px #5C5696;
+  &.big{
+    width: 85vw;
+  }
+}

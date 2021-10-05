@@ -15,10 +15,11 @@ export class LoginService {
   }
 
   public login(empId: number): number {
-    const employeeIndex = this.employeeService.checkEmployee(empId);
+    let employeeIndex = this.employeeService.checkEmployee(empId);
     if(employeeIndex >= 0){
+      employeeIndex = empId;
       localStorage.setItem('HackIdeasActiveEmployee', JSON.stringify(empId));
     }
-    return this.employeeService.checkEmployee(empId);
+    return employeeIndex;
   }
 }
