@@ -7,7 +7,14 @@ import { Data } from '@angular/router';
 export class DataService {
 
   public data: Data = {
-    employee: [],
+    employee: [
+      {
+        id: 0,
+        name: 'Admin',
+        empId: 12345,
+        createdDate: new Date()
+      }
+    ],
     tag: [],
     challenge: [],
     vote: []

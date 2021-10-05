@@ -26,7 +26,7 @@ export class ChallengeComponent implements OnInit {
   public editIndex = 0;
 
   constructor(
-    private challengeService: ChallengeService,
+    public challengeService: ChallengeService,
     private tagService: TagService,
     private employeeService: EmployeeService,
     public voteService: VoteService

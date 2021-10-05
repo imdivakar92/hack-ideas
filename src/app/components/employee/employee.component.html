@@ -1,7 +1,7 @@
 Employee List
 <form #createEmployeeForm="ngForm" (ngSubmit)="createEmployeeForm.valid && createEmployee()">
   <input type="text" name="employeeName" id="employeeName" [(ngModel)]="employee.name" placeholder="employeeName" required />
-  <input type="text" name="employeeId" id="employeeId" [(ngModel)]="employee.empId" placeholder="employeeId" required />
+  <input type="number" name="employeeId" id="employeeId" [(ngModel)]="employee.empId" placeholder="employeeId" required />
   <input type="submit" />
 </form>
 <ul>

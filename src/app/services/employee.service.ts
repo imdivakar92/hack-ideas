@@ -35,7 +35,9 @@ export class EmployeeService {
   }
 
   public checkEmployee(empId: number): number {
-    return this.employeeData.findIndex((data) => (data.empId === empId));
+    return this.employeeData.findIndex((data) => {
+      return (data.empId === empId)
+    });
   }
 
   public activeEmployeeId(): number {

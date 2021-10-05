@@ -33,6 +33,6 @@ export class LoginComponent implements OnInit {
   }
 
   navigateToLoggedInPage(): void {
-    // this.router.navigate(['/employee']);
+    this.router.navigate(['/challenge']);
   }
 }

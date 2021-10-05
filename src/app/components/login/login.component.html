@@ -1,6 +1,6 @@
 Employee Login
 <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && login()">
-  <input type="text" name="loginEmpId" id="loginEmpId" [(ngModel)]="loginEmpId" placeholder="loginEmpId" required />
+  <input type="number" name="loginEmpId" id="loginEmpId" [(ngModel)]="loginEmpId" placeholder="loginEmpId" required />
   <input type="submit" />
 </form>
 <button (click)="logout()">logout</button>

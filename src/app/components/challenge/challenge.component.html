@@ -6,8 +6,8 @@ Challenge List
 <ul>
   <li *ngFor="let challenge of challengeList;let i=index;">
     {{challenge.title}}
-    <button type="button" (click)="removeChallenge(i)">Remove</button>
-    <button type="button" (click)="editChallenge(i)">Edit</button>
+    <button *ngIf="challengeService.displayActionItems(challenge.createdBy)" type="button" (click)="removeChallenge(i)">Remove</button>
+    <button *ngIf="challengeService.displayActionItems(challenge.createdBy)" type="button" (click)="editChallenge(i)">Edit</button>
     <button type="button" (click)="toggleVote(challenge.id)">Vote ( {{voteService.getTotalVotesForThisChallenge(challenge.id)}} )</button>
   </li>
 </ul>
