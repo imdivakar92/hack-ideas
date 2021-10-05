@@ -1,0 +1,12 @@
+Tag List
+<form #createTagForm="ngForm" (ngSubmit)="createTagForm.valid && createTag()">
+  <input type="text" name="tagName" id="tagName" [(ngModel)]="tag.name" placeholder="tagName" required />
+  <input type="submit" />
+</form>
+<ul>
+  <li *ngFor="let tag of tagList;let i=index;">
+    {{tag.name}}
+    <button type="button" (click)="removeTag(i)">Remove</button>
+    <button type="button" (click)="editTag(i)">Edit</button>
+  </li>
+</ul>
