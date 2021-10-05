@@ -9,7 +9,8 @@ export class DataService {
   public data: Data = {
     employee: [],
     tag: [],
-    challenge: []
+    challenge: [],
+    vote: []
   };
 
   constructor() { 

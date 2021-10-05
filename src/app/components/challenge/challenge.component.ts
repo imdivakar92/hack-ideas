@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Challenge } from 'src/app/models/Challenge';
+import { Vote } from 'src/app/models/Vote';
 import { ChallengeService } from 'src/app/services/challenge.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { TagService } from 'src/app/services/tag.service';
+import { VoteService } from 'src/app/services/vote.service';
 
 @Component({
   selector: 'app-challenge',
@@ -12,6 +14,7 @@ import { TagService } from 'src/app/services/tag.service';
 export class ChallengeComponent implements OnInit {
 
   public challengeList: Challenge[] = [];
+  public voteList: Vote[] = [];
   public challenge: Challenge = {
     id: 0,
     title: '',
@@ -25,11 +28,13 @@ export class ChallengeComponent implements OnInit {
   constructor(
     private challengeService: ChallengeService,
     private tagService: TagService,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    public voteService: VoteService
   ) { }
 
   ngOnInit(): void {
     this.challengeList = this.challengeService.getChallenge();
+    this.voteList = this.voteService.getVote();
   }
 
   createChallenge(): void {
@@ -52,6 +57,16 @@ export class ChallengeComponent implements OnInit {
   editChallenge(index: number): void {
     this.challenge = this.challengeList[index];
     this.editIndex = index;
+  }
+
+  toggleVote(challengeId: number): void {
+    const vote: Vote = {
+      id: this.voteList.length,
+      challengeId,
+      votedBy: this.employeeService.activeEmployeeId(),
+      createdDate: new Date()
+    }
+    this.voteService.toggleVote(vote);
   }
 
   refreshEmployeeScope(): void {

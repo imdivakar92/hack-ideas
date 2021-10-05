@@ -8,5 +8,6 @@ Challenge List
     {{challenge.title}}
     <button type="button" (click)="removeChallenge(i)">Remove</button>
     <button type="button" (click)="editChallenge(i)">Edit</button>
+    <button type="button" (click)="toggleVote(challenge.id)">Vote ( {{voteService.getTotalVotesForThisChallenge(challenge.id)}} )</button>
   </li>
 </ul>
