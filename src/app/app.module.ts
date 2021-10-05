@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
@@ -20,6 +23,8 @@ import { ChallengeComponent } from './components/challenge/challenge.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    TagInputModule,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [],
