@@ -1,0 +1,12 @@
+Employee List
+<form #createEmployeeForm="ngForm" (ngSubmit)="createEmployeeForm.valid && createEmployee()">
+  <input type="text" name="employeeName" id="employeeName" [(ngModel)]="employee.name" placeholder="employeeName" required />
+  <input type="submit" />
+</form>
+<ul>
+  <li *ngFor="let employee of employeeList;let i=index;">
+    {{employee.name}}
+    <button type="button" (click)="removeEmployee(i)">Remove</button>
+    <button type="button" (click)="editEmployee(i)">Edit</button>
+  </li>
+</ul>
