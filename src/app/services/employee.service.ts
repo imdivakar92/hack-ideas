@@ -33,4 +33,12 @@ export class EmployeeService {
   public getEmployee(): Employee[] {
     return this.employeeData;
   }
+
+  public checkEmployee(empId: number): number {
+    return this.employeeData.findIndex((data) => (data.empId === empId));
+  }
+
+  public activeEmployeeId(): number {
+    return JSON.parse(localStorage.getItem('HackIdeasActiveEmployee') || '0');
+  }
 }

@@ -29,7 +29,6 @@ export class EmployeeComponent implements OnInit {
 
   createEmployee(): void {
     this.employee.id = this.employeeList.length;
-    this.employee.empId = this.employeeList.length;
     this.employee.createdDate = new Date;
     (!this.editIndex) ? this.employeeService.createEmployee(this.employee) : this.updateEmployee();
     this.refreshEmployeeScope();
@@ -51,7 +50,7 @@ export class EmployeeComponent implements OnInit {
 
   refreshEmployeeScope(): void {
     this.employee = {
-      id: 0,
+      id: this.employeeList.length,
       name: '',
       empId: 0,
       createdDate: new Date

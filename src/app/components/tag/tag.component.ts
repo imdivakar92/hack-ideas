@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tag } from 'src/app/models/Tag';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { TagService } from 'src/app/services/tag.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class TagComponent implements OnInit {
   public editIndex = 0;
 
   constructor(
-    private tagService: TagService
+    private tagService: TagService,
+    private employeeService: EmployeeService
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class TagComponent implements OnInit {
 
   createTag(): void {
     this.tag.id = this.tagList.length;
-    this.tag.createdBy = this.tagList.length;
+    this.tag.createdBy = this.employeeService.activeEmployeeId();
     this.tag.createdDate = new Date;
     (!this.editIndex) ? this.tagService.createTag(this.tag) : this.updateTag();
     this.refreshTagScope();
@@ -50,9 +52,9 @@ export class TagComponent implements OnInit {
 
   refreshTagScope(): void {
     this.tag = {
-      id: 0,
+      id: this.tagList.length,
       name: '',
-      createdBy: 0,
+      createdBy: this.employeeService.activeEmployeeId(),
       createdDate: new Date
     };
     this.editIndex = 0;
